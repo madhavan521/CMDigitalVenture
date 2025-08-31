@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import cahtbot from "../Asset/cahtbot.jpg";
-import contentWriting from "../Asset/content-writing-2.png"
+import contentWriting from "../Asset/content-writing-2.png";
 import customWeb from "../Asset/custome web.jpg";
 import google from "../Asset/google.png";
 import meta from "../Asset/meta.png";
@@ -77,7 +77,6 @@ function Services() {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true,
         },
       },
       {
@@ -106,27 +105,23 @@ function Services() {
       <Slider {...settings}>
         {services.map((service, index) => (
           <div key={index} className="p-2">
-            <div className="row justify-content-center">
-              <div className="col-lg-4 col-md-6 col-sm-12">
-                <div
-                  className="card shadow text-center"
-                  style={{ height: "320px" }}
-                >
-                  <img
-                    src={service.image}
-                    alt={service.name}
-                    className="card-img-top"
-                    style={{
-                      height: "120px",
-                      objectFit: "contain",
-                      padding: "15px",
-                    }}
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title">{service.name}</h5>
-                    <p className="text-muted">{service.minidescription}</p>
-                  </div>
-                </div>
+            <div
+              className="card shadow text-center h-100"
+              style={{ height: "320px" }}
+            >
+              <img
+                src={service.image}
+                alt={service.name}
+                className="card-img-top"
+                style={{
+                  height: "120px",
+                  objectFit: "contain",
+                  padding: "15px",
+                }}
+              />
+              <div className="card-body">
+                <h5 className="card-title">{service.name}</h5>
+                <p className="text-muted">{service.minidescription}</p>
               </div>
             </div>
           </div>
