@@ -7,7 +7,7 @@ import cahtbot from "../Asset/cahtbot.jpg";
 import contentWriting from "../Asset/content-writing-2.png";
 import customWeb from "../Asset/custome web.jpg";
 import google from "../Asset/google.png";
-import meta from "../Asset/meta.png"
+import meta from "../Asset/meta.png";
 import personalPort from "../Asset/personal port.png";
 import posterdesign from "../Asset/posterdesign.jpg";
 import shopifyWeb from "../Asset/ShopifyDevelopment.png";
@@ -104,7 +104,7 @@ function Services() {
 
       <Slider {...settings}>
         {services.map((service, index) => (
-          <div key={index} className="p-2">
+          <div key={index} className="d-flex justify-content-center align-item-center p-2">
             <div
               className="card shadow text-center h-100"
               style={{ height: "320px" }}
