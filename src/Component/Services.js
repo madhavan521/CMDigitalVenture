@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import cahtbot from "../Asset/cahtbot.jpg";
-import contentWriting from "../Asset/content-writing-2.png";
+import contentWriting from "../Asset/content-writing-2.png"
 import customWeb from "../Asset/custome web.jpg";
 import google from "../Asset/google.png";
 import meta from "../Asset/meta.png";
