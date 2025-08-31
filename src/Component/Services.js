@@ -1,6 +1,5 @@
 import React from "react";
 import Slider from "react-slick";
-import logo from "../Mainlogo.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -14,61 +13,58 @@ import posterdesign from "../Asset/posterdesign.jpg";
 import shopifyWeb from "../Asset/ShopifyDevelopment.png";
 
 function Services() {
+  const services = [
+    {
+      name: "Chatbot",
+      image: cahtbot,
+      minidescription: "AI-powered chatbot solutions",
+      description: "We build smart chatbots to automate your customer support and sales.",
+    },
+    {
+      name: "Content Writing",
+      image: contentWriting,
+      minidescription: "Engaging content",
+      description: "We provide SEO-friendly blogs, scripts, and social media content.",
+    },
+    {
+      name: "Custom Website",
+      image: customWeb,
+      minidescription: "Personalized websites",
+      description: "Responsive websites tailored to your business needs.",
+    },
+    {
+      name: "Google Ads",
+      image: google,
+      minidescription: "Boost visibility",
+      description: "Run high-conversion Google Ads to grow your brand reach.",
+    },
+    {
+      name: "Meta Ads",
+      image: meta,
+      minidescription: "Meta platform marketing",
+      description: "Targeted ads on Facebook & Instagram to maximize conversions.",
+    },
+    {
+      name: "Personal Portfolio",
+      image: personalPort,
+      minidescription: "Showcase yourself",
+      description: "Build your personal portfolio website to highlight your skills.",
+    },
+    {
+      name: "Poster Design",
+      image: posterdesign,
+      minidescription: "Creative posters",
+      description: "We design engaging posters for marketing and promotions.",
+    },
+    {
+      name: "Shopify Website Development",
+      image: shopifyWeb,
+      minidescription: "E-commerce solutions",
+      description: "Launch your Shopify store with professional design and setup.",
+    },
+  ];
 
-const services = [
-  {
-    name: "Chatbot",
-    image: cahtbot,
-    minidescription: "AI-powered chatbot solutions",
-    description: "We build smart chatbots to automate your customer support and sales.",
-  },
-  {
-    name: "Content Writing",
-    image: contentWriting,
-    minidescription: "Engaging content",
-    description: "We provide SEO-friendly blogs, scripts, and social media content.",
-  },
-  {
-    name: "Custom Website",
-    image: customWeb,
-    minidescription: "Personalized websites",
-    description: "Responsive websites tailored to your business needs.",
-  },
-  {
-    name: "Google Ads",
-    image: google,
-    minidescription: "Boost visibility",
-    description: "Run high-conversion Google Ads to grow your brand reach.",
-  },
-  {
-    name: "Meta Ads",
-    image: meta,
-    minidescription: "Meta platform marketing",
-    description: "Targeted ads on Facebook & Instagram to maximize conversions.",
-  },
-  {
-    name: "Personal Portfolio",
-    image: personalPort,
-    minidescription: "Showcase yourself",
-    description: "Build your personal portfolio website to highlight your skills.",
-  },
-  {
-    name: "Poster Design",
-    image: posterdesign,
-    minidescription: "Creative posters",
-    description: "We design engaging posters for marketing and promotions.",
-  },
-  {
-    name: "Shopify Website Development",
-    image: shopifyWeb,
-    minidescription: "E-commerce solutions",
-    description: "Launch your Shopify store with professional design and setup.",
-  },
-];
-
-
-  
-var settings = {
+  var settings = {
     infinite: false,
     speed: 500,
     slidesToShow: 4,
@@ -81,56 +77,61 @@ var settings = {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true
-        }
+          dots: true,
+        },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2
-        }
+          initialSlide: 2,
+        },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
+
   return (
     <div className="container my-5">
-       <h2 className="text-center mb-4">Our Services</h2>
-            <p className="text-center mb-2">Slide To View More</p>
+      <h2 className="text-center mb-4">Our Services</h2>
+      <p className="text-center mb-2">Slide To View More</p>
 
-      <Slider  {...settings}>
+      <Slider {...settings}>
         {services.map((service, index) => (
           <div key={index} className="p-2">
-            <div
-              className="card shadow d-flex flex-column justify-content-between"
-              style={{ height: "320px" }} 
-            >
-              <img
-                src={service.image}
-                alt={service.name}
-                className="card-img-top"
-                style={{
-                  height: "120px",
-                  objectFit: "contain",
-                  padding: "15px",
-                }}
-              />
-              <div className="card-body text-center">
-                <h5 className="card-title">{service.name}</h5>
-                <p className="text-muted">{service.minidescription}</p>
+            <div className="row justify-content-center">
+              <div className="col-lg-4 col-md-6 col-sm-12">
+                <div
+                  className="card shadow text-center"
+                  style={{ height: "320px" }}
+                >
+                  <img
+                    src={service.image}
+                    alt={service.name}
+                    className="card-img-top"
+                    style={{
+                      height: "120px",
+                      objectFit: "contain",
+                      padding: "15px",
+                    }}
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title">{service.name}</h5>
+                    <p className="text-muted">{service.minidescription}</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         ))}
-      </Slider>    
+      </Slider>
     </div>
   );
 }
