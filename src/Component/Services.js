@@ -7,7 +7,7 @@ import cahtbot from "../Asset/cahtbot.jpg";
 import contentWriting from "../Asset/content-writing-2.png";
 import customWeb from "../Asset/custome web.jpg";
 import google from "../Asset/google.png";
-import meta from "../Asset/meta.png";
+import meta from "../Asset/meta.png"
 import personalPort from "../Asset/personal port.png";
 import posterdesign from "../Asset/posterdesign.jpg";
 import shopifyWeb from "../Asset/ShopifyDevelopment.png";
