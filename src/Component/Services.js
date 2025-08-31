@@ -1,4 +1,71 @@
 import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+
+import cahtbot from "../Asset/cahtbot.jpg";
+import contentWriting from "../Asset/content-writing-2.png";
+import customWeb from "../Asset/custome web.jpg";
+import google from "../Asset/google.png";
+import meta from "../Asset/meta.png";
+import personalPort from "../Asset/personal port.png";
+import posterdesign from "../Asset/posterdesign.jpg";
+import shopifyWeb from "../Asset/ShopifyDevelopment.png";
+
+function Services() {
+  const services = [
+    { id: 1, name: "Chatbot", image: cahtbot },
+    { id: 2, name: "Content Writing", image: contentWriting },
+    { id: 3, name: "Custom Website", image: customWeb },
+    { id: 4, name: "Google Ads", image: google },
+    { id: 5, name: "Meta Ads", image: meta },
+    { id: 6, name: "Personal Portfolio", image: personalPort },
+    { id: 7, name: "Poster Design", image: posterdesign },
+    { id: 8, name: "Shopify Development", image: shopifyWeb },
+  ];
+
+  return (
+    <div className="container my-4">
+
+      <h2 className="text-center mb-4">Our Services</h2>
+       <p className="text-center mb-3">Slide To View More</p>
+      <Swiper
+        modules={[Autoplay, Pagination, Navigation]}
+        spaceBetween={20}
+        autoplay={{ delay: 2000, disableOnInteraction: false }}
+        // pagination={{ clickable: true }}
+        // navigation
+        breakpoints={{
+          0: { slidesPerView: 1 },     // xs
+          576: { slidesPerView: 2 },   // sm
+          768: { slidesPerView: 2 },   // md
+          1024: { slidesPerView: 4 },  // lg+
+        }}
+      >
+        {services.map((item) => (
+          <SwiperSlide key={item.id}>
+            <article className="card h-100 shadow-sm text-center">
+              <img
+                src={item.image}
+                alt={item.name}
+                className="card-img-top"
+                style={{ width: "100%", height: 180, objectFit: "cover" }}
+              />
+              <div className="card-body">
+                <h3 className="card-title fs-6">{item.name}</h3>
+              </div>
+            </article>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  );
+}
+
+export default Services;
+import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
