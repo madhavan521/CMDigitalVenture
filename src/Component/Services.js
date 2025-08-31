@@ -14,81 +14,44 @@ import shopifyWeb from "../Asset/ShopifyDevelopment.png";
 
 function Services() {
   const services = [
-    {
-      name: "Chatbot",
-      image: cahtbot,
-      minidescription: "AI-powered chatbot solutions",
-      description: "We build smart chatbots to automate your customer support and sales.",
-    },
-    {
-      name: "Content Writing",
-      image: contentWriting,
-      minidescription: "Engaging content",
-      description: "We provide SEO-friendly blogs, scripts, and social media content.",
-    },
-    {
-      name: "Custom Website",
-      image: customWeb,
-      minidescription: "Personalized websites",
-      description: "Responsive websites tailored to your business needs.",
-    },
-    {
-      name: "Google Ads",
-      image: google,
-      minidescription: "Boost visibility",
-      description: "Run high-conversion Google Ads to grow your brand reach.",
-    },
-    {
-      name: "Meta Ads",
-      image: meta,
-      minidescription: "Meta platform marketing",
-      description: "Targeted ads on Facebook & Instagram to maximize conversions.",
-    },
-    {
-      name: "Personal Portfolio",
-      image: personalPort,
-      minidescription: "Showcase yourself",
-      description: "Build your personal portfolio website to highlight your skills.",
-    },
-    {
-      name: "Poster Design",
-      image: posterdesign,
-      minidescription: "Creative posters",
-      description: "We design engaging posters for marketing and promotions.",
-    },
-    {
-      name: "Shopify Website Development",
-      image: shopifyWeb,
-      minidescription: "E-commerce solutions",
-      description: "Launch your Shopify store with professional design and setup.",
-    },
+    { id: 1, name: "Chatbot", image: cahtbot, minidescription: "AI-powered chatbot" },
+    { id: 2, name: "Content Writing", image: contentWriting, minidescription: "Engaging content" },
+    { id: 3, name: "Custom Website", image: customWeb, minidescription: "Personalized websites" },
+    { id: 4, name: "Google Ads", image: google, minidescription: "Boost visibility" },
+    { id: 5, name: "Meta Ads", image: meta, minidescription: "Meta platform marketing" },
+    { id: 6, name: "Personal Portfolio", image: personalPort, minidescription: "Showcase yourself" },
+    { id: 7, name: "Poster Design", image: posterdesign, minidescription: "Creative posters" },
+    { id: 8, name: "Shopify Development", image: shopifyWeb, minidescription: "E-commerce solutions" },
   ];
 
-  var settings = {
+  const settings = {
+    autoplay: true,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
     infinite: false,
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToShow: 4, // Default lg
+    slidesToScroll: 2,
     initialSlide: 0,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1024, // md & tablets
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 2,
           infinite: true,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 768, // sm
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           initialSlide: 2,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 576, // xs
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -100,33 +63,30 @@ function Services() {
   return (
     <div className="container my-5">
       <h2 className="text-center mb-4">Our Services</h2>
-      <p className="text-center mb-2">Slide To View More</p>
+      <p className="text-center mb-3">Slide To View More</p>
 
-      <Slider {...settings}>
-        {services.map((service, index) => (
-          <div key={index} className="d-flex justify-content-center align-item-center p-2">
-            <div
-              className="card shadow text-center h-100"
-              style={{ height: "320px" }}
-            >
-              <img
-                src={service.image}
-                alt={service.name}
-                className="card-img-top"
-                style={{
-                  height: "120px",
-                  objectFit: "contain",
-                  padding: "15px",
-                }}
-              />
-              <div className="card-body">
-                <h5 className="card-title">{service.name}</h5>
-                <p className="text-muted">{service.minidescription}</p>
+      <div className="row">
+        <div className="col">
+          <Slider {...settings}>
+            {services.map((service) => (
+              <div key={service.id} className="px-2"> {/* spacing wrapper */}
+                <div className="card text-center shadow h-100">
+                  <div className="p-3">
+                    <img
+                      src={service.image}
+                      alt={service.name}
+                      className="mx-auto d-block"
+                      style={{ height: "100px", width: "120px", objectFit: "contain" }}
+                    />
+                    <h6 className="mt-3">{service.name}</h6>
+                    <p className="text-muted small">{service.minidescription}</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        ))}
-      </Slider>
+            ))}
+          </Slider>
+        </div>
+      </div>
     </div>
   );
 }
