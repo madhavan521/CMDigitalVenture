@@ -35,7 +35,6 @@ function Clients() {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true,
         },
       },
       {
@@ -63,10 +62,13 @@ function Clients() {
 
       <Slider {...settings}>
         {clients.map((client, index) => (
-          <div key={index} className="p-2">
+          <div
+            key={index}
+            className="d-flex justify-content-center align-items-center p-2"
+          >
             <div
-              className="card shadow d-flex flex-column justify-content-center align-items-center"
-              style={{ height: "250px" }}
+              className="card shadow text-center h-100"
+              style={{ height: "320px" }}
             >
               <img
                 src={client.image}
@@ -74,13 +76,12 @@ function Clients() {
                 className="card-img-top"
                 style={{
                   height: "120px",
-                  width: "auto",
                   objectFit: "contain",
-                  padding: "10px",
+                  padding: "15px",
                 }}
               />
-              <div className="card-body text-center">
-                <h6 className="card-title">{client.name}</h6>
+              <div className="card-body">
+                <h5 className="card-title">{client.name}</h5>
               </div>
             </div>
           </div>
